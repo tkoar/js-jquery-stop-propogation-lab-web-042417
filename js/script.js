@@ -5,32 +5,35 @@ $(document).ready(function() {
   yellowLight();
   greenLight();
 
-  
+
 });
 
-function lightActive(){
+function lightActive(event){
   $('.light').on('click', function(){
       $(this).toggleClass("active");
       console.log("background purple")
   });
 }
 
+
 function redLight(){
-  $(".redLight").on('click', function(){
-    $(this).toggleClass("red");
+  $(".redLight").on('click', function(event){
+    $(this).toggleClass("red")
+    event.stopPropagation()
   });
 }
 
 
 function yellowLight(){
-  $(".yellowLight").on('click', function(){
-    $(this).toggleClass("yellow");
+  $(".yellowLight").on('click', function(event){
+    $(this).toggleClass("yellow")
+    event.stopPropagation()
   });
 }
 
 function greenLight(){
-  $(".greenLight").on('click', function(){
-    $(this).toggleClass("green");
+  $(".greenLight").on('click', function(event){
+    $(this).toggleClass("green")
+    event.stopPropagation()
   });
 }
-
